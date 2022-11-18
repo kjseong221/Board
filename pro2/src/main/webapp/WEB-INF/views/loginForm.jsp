@@ -13,6 +13,10 @@
 		$(".loginBtn").click( function(){
 			checkLoginForm();
 		})
+		
+		// 접속한 클라이언트가 가져온 쿠키명 중 mid, pwd 에 대응하는 쿠키값 삽입
+		$("[name='mid']").val("${cookie.mid.value}"); 
+		$("[name='pwd']").val("${cookie.pwd.value}");
 	});
 		//-------------------------------------------------------------------------------------------
 		//----------------------------------<함수>--------------------------------------------------
@@ -143,7 +147,7 @@
 	
 		<div style="height:5px"></div>
 		 <input type="button" value="로그인" class="loginBtn">
-
+		<input type="checkbox" name="is_login" value="yes" class="is_login" ${empty cookie.mid.value?'':'checked'}>아이디/암호 저장
 	</form>
 
 
